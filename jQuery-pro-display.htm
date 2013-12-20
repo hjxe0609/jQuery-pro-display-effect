@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://www.veryhuo.com/a/demo/2010/liehuo_jq_pro.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<style>
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif;  margin:0 auto;}
+table{border-collapse:collapse;border-spacing:0;}
+p{line-height:28px}
+.clearfloat{height:0;font-size:1px;clear:both;line-height:0;}
+#container{  width:650px; text-align:left; margin:20px auto; }
+a{color:#333;text-decoration:none;}
+a:hover{color:#ef9b11; text-decoration:underline;}
+.left{ width:420px; float:left;}
+.left h3{ font-size:18px; padding-bottom:8px; font-weight:normal;}
+.s-t{ width:100%; padding-bottom:10px;}
+.s-c{ width:100%;}
+.s-c h4{ font-size:14px; font-weight:normal; padding-bottom:9px;}
+.s-c .pics{ width:107px; float:left;}
+.s-c .p1 img{ width:100%;}
+.s-c .s-detail{ width:285px; float:left; display:inline; margin-left:7px;}
+.cnt{ text-indent:2em; line-height:18px;}
+.right{ width:180px; float:left; BACKGROUND: #f3f3f3;}
+.slide-pic { padding:10px 0px 10px 15px; HEIGHT: auto}
+.slide-pic A#prev {DISPLAY: block; BACKGROUND: url(/uploads/allimg/1010/slide.png) no-repeat; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 150px; TEXT-INDENT: -9999em; HEIGHT: 14px; outline: none}
+.slide-pic A#next {DISPLAY: block; BACKGROUND: url(/uploads/allimg/1010/slide.png) no-repeat; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 150px; TEXT-INDENT: -9999em; HEIGHT: 14px; outline: none}
+.slide-pic A#prev {BACKGROUND-POSITION: center 0px}
+.slide-pic A#next {BACKGROUND-POSITION: center -20px}
+.slide-pic A#prev:hover {BACKGROUND-POSITION: center -40px}
+.slide-pic A#next:hover {BACKGROUND-POSITION: center -60px}
+.slide-pic A.gray#prev {BACKGROUND-POSITION: center -80px}
+.slide-pic A.gray#next {BACKGROUND-POSITION: center -100px}
+.slide-pic .pic-container {MARGIN: 5px 0px; OVERFLOW: hidden; WIDTH: 150px; HEIGHT: 300px}
+.slide-pic UL {WIDTH: 150px}
+.slide-pic UL LI {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; CURSOR: pointer; PADDING-TOP: 5px
+}
+.slide-pic UL LI P {BORDER-RIGHT: #fff 5px solid; BORDER-TOP: #fff 5px solid; OVERFLOW: hidden; BORDER-LEFT: #fff 5px solid; WIDTH: 140px; BORDER-BOTTOM: #fff 5px solid; HEIGHT: 80px}
+.slide-pic UL LI.hover P {BORDER-LEFT-COLOR: #bbbbbb; BORDER-BOTTOM-COLOR: #bbbbbb; BORDER-TOP-COLOR: #bbbbbb; BORDER-RIGHT-COLOR: #bbbbbb}
+.slide-pic UL LI P IMG {WIDTH: 140px; HEIGHT: 80px}
+.slide-pic UL LI.cur P {BORDER-LEFT-COLOR: #2c2c2c! important; BORDER-BOTTOM-COLOR: #2c2c2c! important; BORDER-TOP-COLOR: #2c2c2c! important; BORDER-RIGHT-COLOR: #2c2c2c! important}
+.slide-pic UL LI .date {MARGIN-TOP: -20px; DISPLAY: block; Z-INDEX: 1; BACKGROUND: #fff; WIDTH: 140px; COLOR: #000; LINE-HEIGHT: 20px; POSITION: static; HEIGHT: 20px; TEXT-ALIGN: center;filter:alpha(opacity=20);-moz-opacity:0.5;-khtml-opacity: 0.5; opacity: 0.5;}
+</style>
+<script src="./image/jquery-1.3.2.js" type="text/javascript"></script>
+<title>jQuery制作的产品展示效果</title>
+</head>
+<body style="text-align:center" cz-shortcut-listen="true">
+<div id="container">
+<div class="left">
+<div class="s-t">
+<span class="date" id="dailyDate"><em class="ym">2010.07</em><em class="day">09</em></span>
+</div>
+<div class="s-c">
+<h4 id="dailyTitle">标题1</h4>
+<div class="s-main">
+<div class="pics">
+<p class="p1"><a href="http://www.veryhuo.com/a/demo/2010/liehuo_jq_pro.html#"><img alt="图片说明" id="dailyImage" src="./image/01-big.jpg"></a></p>
+<p class="tip" id="dailyImageFrom">图片说明1</p>
+</div>
+<div class="s-detail">
+<div class="cnt" id="dailyContent">文字说明1<br></div>
+</div>
+</div>
+</div>
+</div>
+<div class="right">
+<div class="slide-pic" id="slidePic">
+<a class="gray" id="prev" hidefocus="" href="javascript:;">前移</a>
+<div class="pic-container">
+<ul style="width: 500px; margin-top: 0px;">
+<li class="cur">
+<p><img src="./image/01.jpg"><span class="date">2012-12-21</span></p>
+</li><li class="">
+<p><img src="./image/02.jpg"><span class="date">2012-12-21</span></p>
+</li><li class="">
+<p><img src="./image/03.jpg"><span class="date">2012-12-21</span></p>
+</li><li class="">
+<p><img src="./image/04.jpg"><span class="date">2012-12-21</span></p>
+</li><li class="">
+<p><img src="./image/05.jpg"><span class="date">2012-12-21</span></p>
+</li></ul>
+</div>
+<a id="next" hidefocus="" href="javascript:;" class="">后移</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var areaDailyList = [{"content":"文字说明1<br>","id":29,"title":"标题1","image":"/uploads/allimg/1010/01-big.jpg","date":"2010-07-09","imageFrom":"图片说明1"},{"content":"文字说明2","id":28,"title":"标题2","image":"/uploads/allimg/1010/02-big.jpg","date":"2010-07-08","imageFrom":"图片说明2"},{"content":"文字说明3","id":27,"title":"标题3","image":"/uploads/allimg/1010/03-big.jpg","date":"2010-07-07","imageFrom":"图片说明3"},{"content":"文字说明4","id":20,"title":"标题4","image":"/uploads/allimg/1010/04-big.jpg","date":"2010-07-06","imageFrom":"图片说明4"},{"content":"文字说明5","id":24,"title":"标题5","image":"/uploads/allimg/1010/05-big.jpg","date":"2010-07-05","imageFrom":"图片说明5"}];
+jQuery(function(){
+if (!$('#slidePic')[0])
+return;
+var i = 0, p = $('#slidePic ul'), pList = $('#slidePic ul li'), len = pList.length;
+var elePrev = $('#prev'), eleNext = $('#next');
+//var firstClick = false;
+var w = 100, num = 3;
+p.css('width',w*len);
+if (len <= num)
+eleNext.addClass('gray');
+function prev(){
+if (elePrev.hasClass('gray')) {
+//alert('已经是第一张了');
+return;
+}
+p.animate({
+marginTop:-(--i) * w
+},500);
+if (i < len - num) {
+eleNext.removeClass('gray');
+}
+if (i == 0) {
+elePrev.addClass('gray');
+}
+}
+function next(){
+if (eleNext.hasClass('gray')) {
+//alert('已经是最后一张了');
+return;
+}
+//p.css('margin-left',-(++i) * w);
+p.animate({
+marginTop:-(++i) * w
+},500);
+if (i != 0) {
+elePrev.removeClass('gray');
+}
+if (i == len - num) {
+eleNext.addClass('gray');
+}
+}
+elePrev.bind('click',prev);
+eleNext.bind('click',next);
+pList.each(function(n,v){
+$(this).click(function(){
+if(n-i == 2){
+next();
+}
+if(n-i == 0){
+prev()
+}
+$('#slidePic ul li.cur').removeClass('cur');
+$(this).addClass('cur');
+show(n);
+}).mouseover(function(){
+$(this).addClass('hover');
+}).mouseout(function(){
+$(this).removeClass('hover');
+})
+});
+function show(i){
+var ad = areaDailyList[i];
+var t = ad.date.split('-');
+$('#dailyTitle').html(ad.title);
+$('#dailyImage').attr('src',ad.image);
+$('#dailyImageFrom').html('' + ad.imageFrom + '');
+$('#dailyContent').html(ad.content);
+$('#dailyDate').html('<em class="ym">' + t[0] + '.' + t[1] + '</em><em class="day">' + t[2] + '</em>');
+var shareRRUrl = encodeURIComponent('http://www.abc.com/share365/'+ad.id);
+var shareUrl = encodeURIComponent('http://www.liehuo.org');
+var shareTitle = encodeURIComponent(ad.title + 'http://www.veryhuo.com');
+var shareContent = encodeURIComponent(ad.content.substring(0,100)+'...');
+}
+});
+</script>
+</body></html>
